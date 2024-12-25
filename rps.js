@@ -54,6 +54,7 @@ weps.addEventListener("click", (e) => {
     document.querySelector(".score").style.display = "none";
     document.querySelector(".h1").style.display = "none";
     document.querySelector(".h2").style.display = "none";
+    enableBtn();
   }
 });
 
@@ -118,6 +119,7 @@ function compareMoves() {
     h2.textContent = "GAME OVER!";
 
     document.querySelector(".h2").style.display = "flex";
+    disableBtn();
   } else if (computerScore == 5) {
     const h1 = document.querySelector(".h1");
     h1.textContent = "COMP WINS!";
@@ -128,5 +130,29 @@ function compareMoves() {
     h2.textContent = "GAME OVER!";
 
     document.querySelector(".h2").style.display = "flex";
+
+    disableBtn();
   }
+}
+
+function disableBtn() {
+  const rockbtn = document.querySelector("#rock");
+  rockbtn.disabled = true;
+
+  const paperbtn = document.querySelector("#paper");
+  paperbtn.disabled = true;
+
+  const scissorsbtn = document.querySelector("#scissor");
+  scissorsbtn.disabled = true;
+}
+
+function enableBtn() {
+  const rockbtn = document.querySelector("#rock");
+  rockbtn.disabled = false;
+
+  const paperbtn = document.querySelector("#paper");
+  paperbtn.disabled = false;
+
+  const scissorsbtn = document.querySelector("#scissor");
+  scissorsbtn.disabled = false;
 }
